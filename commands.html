@@ -24,7 +24,8 @@
 		<td><code>{bancheck [channel] text</code></td>
 		<td>Tests a given piece of text against the Pajbot1 banphrase API <img src="https://cdn.frankerfacez.com/emoticon/611303/1" alt="MODERATE"><br>
 		Channel must be known and have a pajbot URL set.<br>
-		<b>Important:</b> this command cannot query pb2 or any other bots.
+		<b>Important:</b> this command cannot query pb2 or any other bots.<br>
+		Use the <b>pajbot2check</b> command to query pb2.
 		</td>
 		<td>everyone</td>
 		<td><a href="https://github.com/noiredayz/noirelight2-commands/tree/main/bancheck" target="_blank">GitHub</a></td>
@@ -256,6 +257,19 @@
 		<td><a href="https://github.com/noiredayz/noirelight2-commands/tree/main/setbp" target="_blank">GitHub</a></td>
 	</tr>
 	<tr>
+		<td>pajbot2check</td>
+		<td>pb2chec k</td>
+		<td><code>{pajbot2check channel text</code></td>
+		<td>Check a specified message against pajbot2 banphrase API if its enabled in the specified channel<br>
+		Note 1: pajbot1, other bots and mods might disagree with the results.<br>
+		Note 2: When calculating message height your username and badges matter. IIRC the API calculates as if
+		you'd be "Supibot" with 1 badge. If you have a supa long name messages that are otherwise look like they
+		are fine could trigger a timeout, as the live check uses your name + badges. In that case you might want to
+		add some placeholder before the message. Caveat emptor.</td>
+		<td>everyone</td>
+		<td><a href="https://github.com/noiredayz/noirelight2-commands/tree/main/pajbot2check" target="_blank">GitHub</a></td>
+	</tr>
+	<tr>
 		<td>Random activity</td>
 		<td>whattodo<br>watdo</td>
 		<td><code>{randomactivity</code></td>
@@ -299,7 +313,7 @@
 	</tr>
 	<tr>
 		<td>Twitch - Uptime</td>
-		<td>uptime<br>ut</td>
+		<td>uptime<br>ut<br>live</td>
 		<td><code>{uptime [channel name]</code></td>
 		<td>Fetches data about a currently online Twitch channel.<br>On Twitch it can be used without a parameter, in that case it gets data about the current channel.</td>
 		<td>everyone</td>

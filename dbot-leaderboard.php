@@ -37,7 +37,7 @@
 	} else {
 		$i = 1;
 		foreach($lb as $u){
-			$wr = number_format(($u["dungeon_wins"]/$u["total_dungeons"]*100), 2)."%";
+			$wr = number_format(($u["dungeon_wins"]/$u["dungeons"]*100), 2)."%";
 			echo("\t<tr>\n");
 			echo("\t\t<td>".$i."</td>\n");
 			echo("\t\t<td>".$u["username"]."</td>\n");

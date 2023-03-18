@@ -29,19 +29,22 @@
 		<td>Level</td>
 		<td>Total experience</td>
 		<td>Entries/Wins</td>
+		<td>Winrate</td>
 	</tr>
 <?php
 	if(count($lb)<10){
-		echo("\t<tr>\n\t\t<td colspan=5>Leaderboard becomes available after more than 10 registered players.</td>\n\t</tr>");
+		echo("\t<tr>\n\t\t<td colspan=6>Leaderboard becomes available after more than 10 registered players.</td>\n\t</tr>");
 	} else {
 		$i = 1;
 		foreach($lb as $u){
+			$wr = number_format(($u["dungeon_wins"]/$u["total_dungeons"]*100), 2)."%";
 			echo("\t<tr>\n");
 			echo("\t\t<td>".$i."</td>\n");
 			echo("\t\t<td>".$u["username"]."</td>\n");
 			echo("\t\t<td>".$u["user_level"]."</td>\n");
 			echo("\t\t<td>".$u["total_experience"]."</td>\n");
 			echo("\t\t<td>".$u["dungeons"]."/".$u["dungeon_wins"]."</td>\n");
+			echo("\t\t<td>".$wr."</td>\n");
 			echo("\t</tr>\n");
 			$i++;
 		}

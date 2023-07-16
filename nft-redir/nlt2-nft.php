@@ -16,8 +16,9 @@
 	}
 	$retval = $db->querySingle("SELECT * FROM nft WHERE uid='".$turl."';", true);
 	if(!$retval){
-		die("identified not found.");
+		die("identifier not found.");
 	}
+	$db->close();
 
 ?>
 <html>
@@ -35,6 +36,5 @@ function NaM(){
 </script>
 <body onLoad="NaM()">
 If you are not being redirected automatically, click this LuL: <a href="<?php echo($retval["link"]); ?>" target="_blank"><?php echo($retval["title"]); ?></a>
-<?php $db->close(); ?>
 </body>
 </html>

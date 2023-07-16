@@ -10,7 +10,7 @@
 <body>
 <?php
 	$lbAPI = "http://127.0.0.1:7776/leaderboard";
-	
+
 	$res = curl_init();
 	curl_setopt($res, CURLOPT_URL, $lbAPI);
 	curl_setopt($res, CURLOPT_RETURNTRANSFER, true);
@@ -40,11 +40,11 @@
 			$wr = number_format(($u["dungeon_wins"]/$u["dungeons"]*100), 2)."%";
 			echo("\t<tr>\n");
 			echo("\t\t<td>".$i."</td>\n");
-			echo("\t\t<td>".$u["username"]."</td>\n");
-			echo("\t\t<td>".$u["user_level"]."</td>\n");
-			echo("\t\t<td>".$u["total_experience"]."</td>\n");
-			echo("\t\t<td>".$u["dungeons"]."/".$u["dungeon_wins"]."</td>\n");
-			echo("\t\t<td>".$wr."</td>\n");
+			echo("\t\t<td style='width: 300px;'>".$u["username"]."</td>\n");
+			echo("\t\t<td style='width: 60px;'>".$u["user_level"]."</td>\n");
+			echo("\t\t<td align='right'>".number_format($u["total_experience"], 0, ".", ",")."</td>\n");
+			echo("\t\t<td align='center' style='width: 120px;'>".$u["dungeons"]."/".$u["dungeon_wins"]."</td>\n");
+			echo("\t\t<td style='width: 70px;'>".$wr."</td>\n");
 			echo("\t</tr>\n");
 			$i++;
 		}
